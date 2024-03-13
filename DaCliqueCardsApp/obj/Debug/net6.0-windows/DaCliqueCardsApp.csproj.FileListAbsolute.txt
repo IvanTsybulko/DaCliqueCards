@@ -29,3 +29,9 @@ D:\source\repos\DaCliqueCardsApp\DaCliqueCardsApp\obj\Debug\net6.0-windows\DaCli
 D:\source\repos\DaCliqueCardsApp\DaCliqueCardsApp\obj\Debug\net6.0-windows\DaCliqueCardsApp.CreateClass.resources
 D:\source\repos\DaCliqueCardsApp\DaCliqueCardsApp\obj\Debug\net6.0-windows\DaCliqueCardsApp.CreateCard.resources
 D:\source\repos\DaCliqueCardsApp\DaCliqueCardsApp\obj\Debug\net6.0-windows\DaCliqueCardsApp.CheckCards.resources
+D:\source\repos\DaCliqueCardsApp\DaCliqueCardsApp\obj\Debug\net6.0-windows\DaCliqueCardsApp.DeleteReschedule.resources
+D:\source\repos\DaCliqueCardsApp\DaCliqueCardsApp\obj\Debug\net6.0-windows\DaCliqueCardsApp.AllClasses.resources
+D:\source\repos\DaCliqueCardsApp\DaCliqueCardsApp\obj\Debug\net6.0-windows\DaCliqueCardsApp.AllStudents.resources
+D:\source\repos\DaCliqueCardsApp\DaCliqueCardsApp\obj\Debug\net6.0-windows\DaCliqueCardsApp.ClassDetails.resources
+D:\source\repos\DaCliqueCardsApp\DaCliqueCardsApp\obj\Debug\net6.0-windows\DaCliqueCardsApp.StudentDetails.resources
+D:\source\repos\DaCliqueCardsApp\DaCliqueCardsApp\obj\Debug\net6.0-windows\DaCliqueCardsApp.CardDetails.resources

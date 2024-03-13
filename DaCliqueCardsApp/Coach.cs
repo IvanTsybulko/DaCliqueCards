@@ -21,7 +21,14 @@ namespace DaCliqueCardsApp
 		public string FirstName
 		{
 			get { return firstName; }
-			set { firstName = value; }
+			set 
+			{
+                if (String.IsNullOrWhiteSpace(value))
+                {
+                    throw new NullReferenceException("First name can not be null or white space!");
+                }
+				firstName = value; 
+			}
 		}
 
 		private string lastName;
@@ -29,7 +36,14 @@ namespace DaCliqueCardsApp
 		public string LastName
 		{
 			get { return lastName; }
-			set { lastName = value; }
+			set 
+			{
+                if (String.IsNullOrWhiteSpace(value))
+                {
+                    throw new NullReferenceException("Last name can not be null or white space!");
+                }
+                lastName = value; 
+			}
 		}
 
 		private string username;
@@ -37,7 +51,14 @@ namespace DaCliqueCardsApp
 		public string Username
 		{
 			get { return username; }
-			set { username = value; }
+			set 
+			{ 
+				if (String.IsNullOrWhiteSpace(value))
+				{
+					throw new NullReferenceException("Username can not be null or white space!");
+				}
+				username = value; 
+			}
 		}
 
 		private string phoneNumber;
@@ -45,7 +66,14 @@ namespace DaCliqueCardsApp
 		public string PhoneNumber
 		{
 			get { return phoneNumber; }
-			set { phoneNumber = value; }
+			set 
+			{
+                if (value.Any(char.IsLetter))
+                {
+                    throw new ArgumentException("Phone number can not contain letters!");
+                }
+                phoneNumber = value; 
+			}
 		}
 
 		private string password;
@@ -53,7 +81,14 @@ namespace DaCliqueCardsApp
 		public string Password
 		{
 			get { return password; }
-			set { password = value; }
+			set 
+			{
+                if (String.IsNullOrWhiteSpace(value))
+                {
+                    throw new NullReferenceException("Password can not be null or white space!");
+                }
+                password = value; 
+			}
 		}
 
 		public string FullInfo

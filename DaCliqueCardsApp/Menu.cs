@@ -38,7 +38,25 @@ namespace DaCliqueCardsApp
         private void CheckCardsButton_Click(object sender, EventArgs e)
         {
             CheckCards checkCards = new CheckCards();
-            checkCards.Show(); 
+            checkCards.Show();
+        }
+
+        private void DeleteRescheduleButton_Click(object sender, EventArgs e)
+        {
+            DeleteReschedule deleteReschedule = new DeleteReschedule();
+            deleteReschedule.Show();
+        }
+
+        private void AllClassesButton_Click(object sender, EventArgs e)
+        {
+            AllClasses allClasses = new AllClasses();
+            allClasses.Show();
+        }
+
+        private void AllStudentsButton_Click(object sender, EventArgs e)
+        {
+            AllStudents allStudents = new AllStudents();
+            allStudents.Show();
         }
     }
 }

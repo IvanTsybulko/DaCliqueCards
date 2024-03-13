@@ -62,41 +62,68 @@ namespace DaCliqueCardsApp
             Place place = places[PlacesComboBox.SelectedIndex];
             DateTime date = ClassDateDateTimePicker.Value;
 
-            Class newClass = new Class(classType.Id, classDuration, atendancesCount, place.Id, CurrentCoach.CurrCoach.Id, date);
-
             DataAccess db = new DataAccess();
-            db.InsertClass(newClass);
 
-            List<Class> classes = new List<Class>();
-            classes = db.GetClasses();
+            List<Class> allClasses = db.GetClasses();
 
-            newClass = classes.Where(x => x.CoachId == CurrentCoach.CurrCoach.Id).Last();
-
-            List<Student> checkedStudents = new List<Student>();
-            checkedStudents = StudentsCheckListBox.CheckedItems.Cast<Student>().ToList();
-
-            foreach (Student student in checkedStudents)
+            bool classIsFree = true;
+            foreach (var c in allClasses)
             {
-                try
+                if (c.Date < date.Add(classDuration))
                 {
-                    List<Card> studentCards = db.GetStudentCards(student.Id);
-
-                    Card card = studentCards.Last();
-
-                    db.UpadteCardClassesLeft(card.Id, (card.ClassesLeft - (int)AtendancesCountNumeric.Value));
-
-                    ClassCard cc = new ClassCard(newClass.Id, card.Id);
-                    db.InsertClassCard(cc);
+                    if (date < (c.Date.Add(c.ClassDuration)))
+                    {
+                        if (c.PlaceId == place.Id)
+                        {
+                            classIsFree = false;
+                            break;
+                        }
+                    }
                 }
-                catch (Exception)
-                {
-
-                    MessageBox.Show($"Student {student.FirstName} {student.LastName} does not have an active card! ");
-                }
-
             }
 
-            updateStudentListBox();
+            if (classIsFree)
+            {
+                Class newClass = new Class(classType.Id, classDuration, atendancesCount, place.Id, CurrentCoach.CurrCoach.Id, date);
+                db.InsertClass(newClass);
+
+                List<Class> classes = new List<Class>();
+                classes = db.GetClasses();
+
+                newClass = classes.Where(x => x.CoachId == CurrentCoach.CurrCoach.Id).Last();
+
+                List<Student> checkedStudents = new List<Student>();
+                checkedStudents = StudentsCheckListBox.CheckedItems.Cast<Student>().ToList();
+
+                foreach (Student student in checkedStudents)
+                {
+                    try
+                    {
+                        List<Card> studentCards = db.GetStudentCards(student.Id);
+
+                        Card card = studentCards.Last();
+
+                        db.UpadteCardClassesLeft(card.Id, (card.ClassesLeft - (int)AtendancesCountNumeric.Value));
+
+                        ClassCard cc = new ClassCard(newClass.Id, card.Id);
+                        db.InsertClassCard(cc);
+                    }
+                    catch (Exception)
+                    {
+
+                        MessageBox.Show($"Student {student.FirstName} {student.LastName} does not have an active card! ");
+                    }
+
+                }
+
+                updateStudentListBox();
+
+                MessageBox.Show("Class created!");
+            }
+            else
+            {
+                MessageBox.Show("Class is not free!");
+            }
         }
     }
 }

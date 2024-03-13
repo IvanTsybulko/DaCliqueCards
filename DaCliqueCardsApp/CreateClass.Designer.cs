@@ -97,11 +97,12 @@
             ClassDurationDateTimePicker.CustomFormat = "HH:mm";
             ClassDurationDateTimePicker.Format = DateTimePickerFormat.Custom;
             ClassDurationDateTimePicker.Location = new Point(6, 212);
+            ClassDurationDateTimePicker.MinDate = new DateTime(2024, 3, 6, 1, 0, 0, 0);
             ClassDurationDateTimePicker.Name = "ClassDurationDateTimePicker";
             ClassDurationDateTimePicker.ShowUpDown = true;
             ClassDurationDateTimePicker.Size = new Size(97, 35);
             ClassDurationDateTimePicker.TabIndex = 2;
-            ClassDurationDateTimePicker.Value = new DateTime(2024, 2, 10, 0, 0, 0, 0);
+            ClassDurationDateTimePicker.Value = new DateTime(2024, 3, 6, 1, 0, 0, 0);
             // 
             // DateLabel
             // 
@@ -114,14 +115,14 @@
             // 
             // ClassDateDateTimePicker
             // 
-            ClassDateDateTimePicker.CustomFormat = "yyyy-MM-dd HH:mm";
+            ClassDateDateTimePicker.CustomFormat = "yyyy-dd-MM HH:mm";
             ClassDateDateTimePicker.Format = DateTimePickerFormat.Custom;
             ClassDateDateTimePicker.Location = new Point(6, 141);
             ClassDateDateTimePicker.Name = "ClassDateDateTimePicker";
             ClassDateDateTimePicker.ShowUpDown = true;
             ClassDateDateTimePicker.Size = new Size(186, 35);
             ClassDateDateTimePicker.TabIndex = 3;
-            ClassDateDateTimePicker.Value = new DateTime(2024, 2, 11, 12, 0, 0, 0);
+            ClassDateDateTimePicker.Value = DateTime.Today.Add(new TimeSpan(12, 0, 0));
             // 
             // AtendancesCountNumeric
             // 

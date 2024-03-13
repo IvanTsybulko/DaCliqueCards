@@ -66,6 +66,51 @@ namespace DaCliqueCardsApp
             }
         }
 
+        public Coach GetCoachById(int CoachId)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("DaCliqueCardsDB")))
+            {
+                var output = connection.Query<Coach>($"dbo.Coaches_GetById @CoachId", new { CoachId = CoachId }).ToList();
+                return output.First();
+            }
+        }
+
+        public ClassType GetClassTypeById(int ClassTypeId)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("DaCliqueCardsDB")))
+            {
+                var output = connection.Query<ClassType>($"dbo.ClassType_GetById @ClassTypeId", new { ClassTypeId = ClassTypeId }).ToList();
+                return output.First();
+            }
+        }
+
+        public List<Class> GetClassesByCardId(int CardId) 
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("DaCliqueCardsDB")))
+            {
+                var output = connection.Query<Class>($"dbo.Classes_GetByCardId @inputCardId", new { inputCardId = CardId }).ToList();
+                return output;
+            }
+        }
+
+        public Place GetPlaceById(int PlaceId)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("DaCliqueCardsDB")))
+            {
+                var output = connection.Query<Place>($"dbo.Place_GetById @PlaceId", new { PlaceId = PlaceId }).ToList();
+                return output.First();
+            }
+        }
+
+        public CardExample GetCardExampleById(int CardExampleId)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("DaCliqueCardsDB")))
+            {
+                var output = connection.Query<CardExample>($"dbo.CardExample_GetById @CardExampleId", new { CardExampleId = CardExampleId }).ToList();
+                return output.First();
+            }
+        }
+
         public Coach LogInCoach(string username, string password)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("DaCliqueCardsDB")))
@@ -154,6 +199,22 @@ namespace DaCliqueCardsApp
                 connection.Execute("dbo.Card_ClassesLeftUpdate @Id, @ClassesLeft",new { id, classesLeft });
             }
         }
+        public void UpadteClasDate(int ClassId, DateTime newDate)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("DaCliqueCardsDB")))
+            {
+                connection.Execute("dbo.Classes_UpdateDateById @ClassId, @NewDate", new { ClassId, newDate });
+            }
+        }
 
+
+
+        public void DeleteClassById(int ClassId)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("DaCliqueCardsDB")))
+            {
+                connection.Execute("dbo.Classes_DeleteById @ClassId", new { ClassId });
+            }
+        }
     }
 }

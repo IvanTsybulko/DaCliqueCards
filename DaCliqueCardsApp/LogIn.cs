@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DaCliqueCardsApp
-{ 
+{
     public partial class LogIn : Form
     {
         public LogIn()
@@ -23,19 +23,18 @@ namespace DaCliqueCardsApp
             string password = PasswordText.Text;
 
             DataAccess db = new DataAccess();
-            try 
+            try
             {
                 Coach coach = db.LogInCoach(username, password);
 
                 if (coach != null)
                 {
                     CurrentCoach.CurrCoach = coach;
-                    MessageBox.Show("Hello, " + CurrentCoach.CurrCoach.FullInfo);
                     Menu menu = new Menu();
                     menu.Show();
                 }
             }
-            catch 
+            catch
             {
                 MessageBox.Show("Wrong Credentials!");
             }

@@ -21,7 +21,14 @@ namespace DaCliqueCardsApp
 		public string Name
 		{
 			get { return name; }
-			set { name = value; }
+			set 
+			{
+                if (String.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentException("Name can not be null or white space");
+                }
+                name = value; 
+			}
 		}
 
 		private int numberOfClasses;
@@ -29,7 +36,14 @@ namespace DaCliqueCardsApp
 		public int NumberOfClasses
 		{
 			get { return numberOfClasses; }
-			set { numberOfClasses = value; }
+			set 
+			{
+				if(value <= 0)
+				{
+					throw new ArgumentException("Number of classes can not be 0 or less!");
+				}
+				numberOfClasses = value; 
+			}
 		}
 
 		private decimal price;
@@ -37,7 +51,14 @@ namespace DaCliqueCardsApp
 		public decimal Price
 		{
 			get { return price; }
-			set { price = value; }
+			set 
+			{
+                if (value <= 0)
+                {
+                    throw new ArgumentException("Price can not be 0 or less!");
+                }
+                price = value; 
+			}
 		}
 
         public string FullInfo

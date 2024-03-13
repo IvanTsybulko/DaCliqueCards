@@ -68,6 +68,7 @@
             PasswordText.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             PasswordText.Location = new Point(12, 113);
             PasswordText.Name = "PasswordText";
+            PasswordText.PasswordChar = '*';
             PasswordText.Size = new Size(248, 35);
             PasswordText.TabIndex = 3;
             // 

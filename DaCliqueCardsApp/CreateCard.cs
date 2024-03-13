@@ -72,8 +72,10 @@ namespace DaCliqueCardsApp
             }
 
             Card lastCard = cards.Last();
-
+            if(lastCard.ClassesLeft<0)
             return lastCard.ClassesLeft;
+
+            return 0;
         }
 
         private void CreateCardButton_Click(object sender, EventArgs e)
@@ -98,6 +100,9 @@ namespace DaCliqueCardsApp
 
                 DataAccess db = new DataAccess();
                 db.InsertCard(card);
+                updateStudentsListBoc();
+
+                MessageBox.Show($"{student.FirstName}'s card has been created!");
             }
             catch (Exception)
             {

@@ -32,7 +32,14 @@ namespace DaCliqueCardsApp
 		public string Name
 		{
 			get { return name; }
-			set { name = value; }
+			set 
+			{
+				if (String.IsNullOrWhiteSpace(value))
+				{
+					throw new ArgumentException("Name can not be null or white space");
+				}
+				name = value;
+			}
 		}
 
 		private decimal pricePerHour;
@@ -40,7 +47,14 @@ namespace DaCliqueCardsApp
 		public decimal PricePerHour
 		{
 			get { return pricePerHour; }
-			set { pricePerHour = value; }
+			set 
+			{ 
+				if(value < 0)
+				{
+					throw new ArgumentException("Price per hour can not be negative number");
+				}
+				pricePerHour = value; 
+			}
 		}
 
 		private string location;
@@ -48,7 +62,14 @@ namespace DaCliqueCardsApp
 		public string Location
 		{
 			get { return location; }
-			set { location = value; }
+			set 
+			{
+				if (string.IsNullOrWhiteSpace(value))
+				{
+					throw new NullReferenceException("Location can not be null or white space");
+				}
+				location = value; 
+			}
 		}
 
 	}

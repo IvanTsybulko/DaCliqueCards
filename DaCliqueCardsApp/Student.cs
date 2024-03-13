@@ -33,7 +33,14 @@ namespace DaCliqueCardsApp
 		public string FirstName
 		{
 			get { return firstName; }
-			set { firstName = value; }
+			set 
+			{
+                if (String.IsNullOrWhiteSpace(value))
+                {
+                    throw new NullReferenceException("First name can not be null or white space!");
+                }
+                firstName = value; 
+			}
 		}
 
 		private string lastName;
@@ -41,7 +48,14 @@ namespace DaCliqueCardsApp
 		public string LastName
 		{
 			get { return lastName; }
-			set { lastName = value; }
+			set 
+			{
+                if (String.IsNullOrWhiteSpace(value))
+                {
+                    throw new NullReferenceException("Last name can not be null or white space!");
+                }
+                lastName = value; 
+			}
 		}
 
 		private int age;
@@ -49,7 +63,14 @@ namespace DaCliqueCardsApp
 		public int Age
 		{
 			get { return age; }
-			set { age = value; }
+			set 
+			{ 
+				if(value <= 0)
+				{
+					throw new ArgumentException("Age must be positive number!");
+				}
+				age = value; 
+			}
 		}
 
 		private string phoneNumber;
@@ -57,12 +78,19 @@ namespace DaCliqueCardsApp
 		public string PhoneNumber
 		{
 			get { return phoneNumber; }
-			set { phoneNumber = value; }
+			set 
+			{
+				if (value.Any(char.IsLetter))
+				{
+					throw new ArgumentException("Phone number can not contain letters!");
+				}
+				phoneNumber = value; 
+			}
 		}
 
 		public string FullInfo
 		{
-			get { return $"{FirstName} {LastName} ({AtendancesLeft()} Classes left)"; }
+			get { return $"{FirstName} {LastName} ({AtendancesLeft()} Classes left) {EndDate()}"; }
 		}
 
 		private int AtendancesLeft()
@@ -78,7 +106,20 @@ namespace DaCliqueCardsApp
 			return 0;
         }
 
-		public List<Card> Cards()
+        private string EndDate()
+        {
+            DataAccess db = new DataAccess();
+            List<Card> cards = db.GetStudentCards(Id);
+
+            if (cards.Count > 0)
+            {
+                return $"End Date: {cards.Last().EndDate.ToString("yyyy-dd-MM")}";
+            }
+
+            return "";
+        }
+
+        public List<Card> Cards()
 		{
             DataAccess db = new DataAccess();
             List<Card> cards = db.GetStudentCards(Id);

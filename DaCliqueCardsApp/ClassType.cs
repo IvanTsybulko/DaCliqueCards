@@ -30,7 +30,14 @@ namespace DaCliqueCardsApp
 		public string ClassTypeName
 		{
 			get { return classTypeName; }
-			set { classTypeName = value; }
+			set 
+			{
+				if (string.IsNullOrWhiteSpace(value))
+				{
+					throw new ArgumentException("Class Type can not be null or white space!");
+				}
+				classTypeName = value; 
+			}
 		}
 
 	}

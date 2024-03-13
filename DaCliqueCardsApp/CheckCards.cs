@@ -25,6 +25,7 @@ namespace DaCliqueCardsApp
             DataAccess db = new DataAccess();
             students = db.GetStudentsNotInClass(newClass.Id);
             students = students.Where(s => s.FullInfo.ToLower().Contains(StudentNameText.Text.ToLower())).ToList();
+            students = students.OrderBy(s => s.FullInfo).ToList();
 
             students = students.Where(s => s.HasActiveCard()).ToList();
            
@@ -37,7 +38,9 @@ namespace DaCliqueCardsApp
             DataAccess db = new DataAccess();
             classes = db.GetClasses(CurrentCoach.CurrCoach.Id).ToList();
 
-            classes.Reverse();
+            classes = classes.Where(c => c.Date <  DateTime.Now).ToList();
+            classes = classes.OrderByDescending(c => c.Date).ToList();
+
             ChooseClassComboBox.DataSource = classes;
             ChooseClassComboBox.DisplayMember = "FullInfo";
 

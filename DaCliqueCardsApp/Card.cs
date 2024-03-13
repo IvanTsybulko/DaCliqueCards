@@ -35,7 +35,14 @@ namespace DaCliqueCardsApp
 		public int CardExampleId
 		{
 			get { return cardExampleId; }
-			set { cardExampleId = value; }
+			set 
+			{
+				if(value == null)
+				{
+					throw new NullReferenceException("Card example id can not be null!");
+				}
+				cardExampleId = value;
+			}
 		}
 
 		private DateTime startingDate;
@@ -60,7 +67,10 @@ namespace DaCliqueCardsApp
 		public int ClassesLeft
 		{
 			get { return classesLeft; }
-			set { classesLeft = value; }
+			set 
+			{
+				classesLeft = value; 
+			}
 		}
 
 		private int studentId;
@@ -68,7 +78,14 @@ namespace DaCliqueCardsApp
 		public int StudentId
 		{
 			get { return studentId; }
-			set { studentId = value; }
+			set 
+			{
+                if (value == null)
+                {
+                    throw new NullReferenceException("Student id can not be null!");
+                }
+                studentId = value; 
+			}
 		}
 
 
@@ -77,7 +94,34 @@ namespace DaCliqueCardsApp
 		public int CoachId
 		{
 			get { return coachId; }
-			set { coachId = value; }
+			set 
+			{
+                if (value == null)
+                {
+                    throw new NullReferenceException("Coach id can not be null!");
+                }
+                coachId = value; 
+			}
 		}
+        public string FullInfo
+        {
+            get { return $"{StartingDate.ToString("yyyy-dd-MM")} to {EndDate.ToString("dd-MM")} {GetCoachName()} Card: {GetCardExampleName()} ({ClassesLeft} Classes left)"; }
+        }
+
+		private string GetCoachName()
+		{
+			DataAccess db = new DataAccess();
+			Coach coach = db.GetCoachById(CoachId);
+
+			return $"{coach.FirstName} {coach.LastName[0]}.";
+		}
+
+		private string GetCardExampleName()
+		{
+            DataAccess db = new DataAccess();
+			CardExample ce = db.GetCardExampleById(CardExampleId);
+
+			return ce.Name;
+        }
     }
 }

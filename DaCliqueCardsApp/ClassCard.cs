@@ -32,7 +32,14 @@ namespace DaCliqueCardsApp
 		public int ClassId
 		{
 			get { return classId; }
-			set { classId = value; }
+			set 
+			{ 
+				if(value == null)
+				{
+					throw new ArgumentNullException("Calss id can not be null!");
+				}
+				classId = value;
+			}
 		}
 
 		private int cardId;
@@ -40,7 +47,14 @@ namespace DaCliqueCardsApp
 		public int CardId
 		{
 			get { return cardId; }
-			set { cardId = value; }
+			set 
+			{
+                if (value == null)
+                {
+                    throw new ArgumentNullException("Card id can not be null!");
+                }
+                cardId = value; 
+			}
 		}
 
 	}
