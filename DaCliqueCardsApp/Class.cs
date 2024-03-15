@@ -49,7 +49,7 @@ namespace DaCliqueCardsApp
 			get { return classTypeId; }
 			set 
             { 
-                if(value == null)
+                if(value.Equals(null))
                 {
                     throw new NullReferenceException("TypeId can not be null!");
                 }
@@ -93,7 +93,7 @@ namespace DaCliqueCardsApp
             get { return coachId; }
             set 
             {
-                if (value == null)
+                if (value.Equals(null))
                 {
                     throw new NullReferenceException("CoachId can not be null!");
                 }

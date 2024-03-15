@@ -28,5 +28,45 @@ namespace DaCliqueCardsApp
 
             MessageBox.Show("Student was successfully created!");
         }
+
+        private void FirstNameText_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+                LastNameText.Focus();
+            }
+        }
+
+        private void LastNameText_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+                AgeText.Focus();
+            }
+        }
+
+        private void AgeText_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+                PhoneNumberText.Focus();
+            }
+        }
+
+        private void PhoneNumberText_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+                CreateStudentButton.PerformClick();
+            }
+        }
     }
 }

@@ -40,9 +40,6 @@
             AtendancesCount = new Label();
             ClassDurationLabel = new Label();
             ClassTypeLabel = new Label();
-            StudentsCheckListBox = new CheckedListBox();
-            StudentNameText = new TextBox();
-            SearchStudentButton = new Button();
             CreateClassButton = new Button();
             CreateAClassGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)AtendancesCountNumeric).BeginInit();
@@ -122,7 +119,7 @@
             ClassDateDateTimePicker.ShowUpDown = true;
             ClassDateDateTimePicker.Size = new Size(186, 35);
             ClassDateDateTimePicker.TabIndex = 3;
-            ClassDateDateTimePicker.Value = DateTime.Today.Add(new TimeSpan(12, 0, 0));
+            ClassDateDateTimePicker.Value = new DateTime(2024, 3, 14, 12, 0, 0, 0);
             // 
             // AtendancesCountNumeric
             // 
@@ -170,36 +167,9 @@
             ClassTypeLabel.TabIndex = 1;
             ClassTypeLabel.Text = "Class Type";
             // 
-            // StudentsCheckListBox
-            // 
-            StudentsCheckListBox.FormattingEnabled = true;
-            StudentsCheckListBox.Location = new Point(476, 109);
-            StudentsCheckListBox.Name = "StudentsCheckListBox";
-            StudentsCheckListBox.Size = new Size(581, 334);
-            StudentsCheckListBox.TabIndex = 6;
-            StudentsCheckListBox.ThreeDCheckBoxes = true;
-            StudentsCheckListBox.UseCompatibleTextRendering = true;
-            // 
-            // StudentNameText
-            // 
-            StudentNameText.Location = new Point(476, 12);
-            StudentNameText.Name = "StudentNameText";
-            StudentNameText.Size = new Size(581, 35);
-            StudentNameText.TabIndex = 7;
-            // 
-            // SearchStudentButton
-            // 
-            SearchStudentButton.Location = new Point(476, 53);
-            SearchStudentButton.Name = "SearchStudentButton";
-            SearchStudentButton.Size = new Size(581, 50);
-            SearchStudentButton.TabIndex = 8;
-            SearchStudentButton.Text = "Search";
-            SearchStudentButton.UseVisualStyleBackColor = true;
-            SearchStudentButton.Click += SearchStudentButton_Click;
-            // 
             // CreateClassButton
             // 
-            CreateClassButton.Location = new Point(386, 465);
+            CreateClassButton.Location = new Point(101, 465);
             CreateClassButton.Name = "CreateClassButton";
             CreateClassButton.Size = new Size(223, 77);
             CreateClassButton.TabIndex = 9;
@@ -211,11 +181,8 @@
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1069, 570);
+            ClientSize = new Size(471, 570);
             Controls.Add(CreateClassButton);
-            Controls.Add(SearchStudentButton);
-            Controls.Add(StudentNameText);
-            Controls.Add(StudentsCheckListBox);
             Controls.Add(CreateAClassGroupBox);
             Controls.Add(CreateClassLabel);
             Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
@@ -244,9 +211,6 @@
         private DateTimePicker ClassDurationDateTimePicker;
         private ComboBox PlacesComboBox;
         private ComboBox ClassTypesComboBox;
-        private CheckedListBox StudentsCheckListBox;
-        private TextBox StudentNameText;
-        private Button SearchStudentButton;
         private Button CreateClassButton;
     }
 }

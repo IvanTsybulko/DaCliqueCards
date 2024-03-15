@@ -54,6 +54,8 @@ namespace DaCliqueCardsApp
         {
             if (e.KeyCode == Keys.Enter)
             {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
                 searchStudentButton.PerformClick();
             }
         }

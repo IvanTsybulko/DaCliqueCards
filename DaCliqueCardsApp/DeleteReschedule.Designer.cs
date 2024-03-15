@@ -109,7 +109,7 @@
             newDatePicker.ShowUpDown = true;
             newDatePicker.Size = new Size(220, 35);
             newDatePicker.TabIndex = 2;
-            newDatePicker.Value = new DateTime(2024, 3, 11, 12, 0, 0, 0);
+            newDatePicker.Value = DateTime.Today;
             // 
             // NewDateLabel
             // 

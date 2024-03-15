@@ -31,12 +31,32 @@ namespace DaCliqueCardsApp
                 {
                     CurrentCoach.CurrCoach = coach;
                     Menu menu = new Menu();
-                    menu.Show();
+                    menu.ShowDialog();
                 }
             }
             catch
             {
                 MessageBox.Show("Wrong Credentials!");
+            }
+        }
+
+        private void PasswordText_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+                LogInButton.PerformClick();
+            }
+        }
+
+        private void UsernameText_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+                PasswordText.Focus();
             }
         }
     }

@@ -46,6 +46,7 @@
             FirstNameText.Name = "FirstNameText";
             FirstNameText.Size = new Size(175, 35);
             FirstNameText.TabIndex = 0;
+            FirstNameText.KeyDown += FirstNameText_KeyDown;
             // 
             // FirstNameLabel
             // 
@@ -74,6 +75,7 @@
             LastNameText.Name = "LastNameText";
             LastNameText.Size = new Size(175, 35);
             LastNameText.TabIndex = 2;
+            LastNameText.KeyDown += LastNameText_KeyDown;
             // 
             // AgeLabel
             // 
@@ -92,6 +94,7 @@
             AgeText.Name = "AgeText";
             AgeText.Size = new Size(175, 35);
             AgeText.TabIndex = 4;
+            AgeText.KeyDown += AgeText_KeyDown;
             // 
             // PhoneNumberLabel
             // 
@@ -110,6 +113,7 @@
             PhoneNumberText.Name = "PhoneNumberText";
             PhoneNumberText.Size = new Size(175, 35);
             PhoneNumberText.TabIndex = 6;
+            PhoneNumberText.KeyDown += PhoneNumberText_KeyDown;
             // 
             // CreateStudentButton
             // 
@@ -126,7 +130,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(219, 450);
             Controls.Add(CreateStudentButton);
             Controls.Add(PhoneNumberLabel);
             Controls.Add(PhoneNumberText);

@@ -34,7 +34,7 @@ namespace DaCliqueCardsApp
 			get { return classId; }
 			set 
 			{ 
-				if(value == null)
+				if(value.Equals(null))
 				{
 					throw new ArgumentNullException("Calss id can not be null!");
 				}
@@ -49,7 +49,7 @@ namespace DaCliqueCardsApp
 			get { return cardId; }
 			set 
 			{
-                if (value == null)
+                if (value.Equals(null))
                 {
                     throw new ArgumentNullException("Card id can not be null!");
                 }

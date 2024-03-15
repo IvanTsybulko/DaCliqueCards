@@ -37,7 +37,7 @@ namespace DaCliqueCardsApp
 			get { return cardExampleId; }
 			set 
 			{
-				if(value == null)
+				if(value.Equals(null))
 				{
 					throw new NullReferenceException("Card example id can not be null!");
 				}
@@ -80,7 +80,7 @@ namespace DaCliqueCardsApp
 			get { return studentId; }
 			set 
 			{
-                if (value == null)
+                if (value.Equals(null))
                 {
                     throw new NullReferenceException("Student id can not be null!");
                 }
@@ -96,7 +96,7 @@ namespace DaCliqueCardsApp
 			get { return coachId; }
 			set 
 			{
-                if (value == null)
+                if (value.Equals(null))
                 {
                     throw new NullReferenceException("Coach id can not be null!");
                 }

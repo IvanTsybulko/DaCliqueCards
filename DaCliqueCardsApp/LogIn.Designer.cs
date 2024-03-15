@@ -62,6 +62,7 @@
             UsernameText.Name = "UsernameText";
             UsernameText.Size = new Size(248, 35);
             UsernameText.TabIndex = 2;
+            UsernameText.KeyDown += UsernameText_KeyDown;
             // 
             // PasswordText
             // 
@@ -71,6 +72,7 @@
             PasswordText.PasswordChar = '*';
             PasswordText.Size = new Size(248, 35);
             PasswordText.TabIndex = 3;
+            PasswordText.KeyDown += PasswordText_KeyDown;
             // 
             // LogInButton
             // 
@@ -87,7 +89,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(278, 227);
             Controls.Add(LogInButton);
             Controls.Add(PasswordText);
             Controls.Add(UsernameText);

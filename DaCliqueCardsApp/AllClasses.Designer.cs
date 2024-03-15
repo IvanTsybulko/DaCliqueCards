@@ -62,7 +62,7 @@
             BegginingDateTimePicker.Name = "BegginingDateTimePicker";
             BegginingDateTimePicker.Size = new Size(342, 35);
             BegginingDateTimePicker.TabIndex = 2;
-            BegginingDateTimePicker.Value = new DateTime(2024, 3, 7, 0, 0, 0, 0);
+            BegginingDateTimePicker.Value = new DateTime(2024, 3, 14, 0, 0, 0, 0);
             // 
             // EndDateTimePicker
             // 
@@ -70,7 +70,7 @@
             EndDateTimePicker.Name = "EndDateTimePicker";
             EndDateTimePicker.Size = new Size(342, 35);
             EndDateTimePicker.TabIndex = 3;
-            EndDateTimePicker.Value = new DateTime(2024, 3, 7, 23, 59, 59, 0);
+            EndDateTimePicker.Value = new DateTime(2024, 3, 14, 0, 0, 0, 0);
             // 
             // ClassesListBox
             // 
@@ -78,14 +78,14 @@
             ClassesListBox.ItemHeight = 30;
             ClassesListBox.Location = new Point(12, 221);
             ClassesListBox.Name = "ClassesListBox";
-            ClassesListBox.Size = new Size(909, 334);
+            ClassesListBox.Size = new Size(1211, 334);
             ClassesListBox.TabIndex = 4;
             // 
             // SearchButton
             // 
             SearchButton.Location = new Point(12, 154);
             SearchButton.Name = "SearchButton";
-            SearchButton.Size = new Size(909, 61);
+            SearchButton.Size = new Size(1211, 61);
             SearchButton.TabIndex = 5;
             SearchButton.Text = "Search";
             SearchButton.UseVisualStyleBackColor = true;
@@ -95,7 +95,7 @@
             // 
             DetailsButton.Location = new Point(12, 561);
             DetailsButton.Name = "DetailsButton";
-            DetailsButton.Size = new Size(909, 61);
+            DetailsButton.Size = new Size(1211, 61);
             DetailsButton.TabIndex = 6;
             DetailsButton.Text = "Open More Details";
             DetailsButton.UseVisualStyleBackColor = true;
@@ -113,7 +113,7 @@
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(933, 627);
+            ClientSize = new Size(1235, 627);
             Controls.Add(PlaceComboBox);
             Controls.Add(DetailsButton);
             Controls.Add(SearchButton);

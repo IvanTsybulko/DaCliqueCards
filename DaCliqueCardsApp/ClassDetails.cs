@@ -27,10 +27,11 @@ namespace DaCliqueCardsApp
             AttendancesLabel.Text = $"Attendances: {currClass.AtendancesCount}";
             PlaceLabel.Text = $"Place: {currClass.GetPlaceName()}";
             CoachLabel.Text = $"Coach: {currClass.GetCoachName()}";
-            ClassTypeLabel.Text = "Type" ;
 
             DataAccess db = new DataAccess();
             students = db.GetStudentsByClassId(currClass.Id);
+
+            ClassTypeLabel.Text = $"Type: {db.GetClassTypeById(currClass.ClassTypeId).ClassTypeName}";
 
             StudentsListBox.DataSource = students;
             StudentsListBox.DisplayMember = "FullInfo";

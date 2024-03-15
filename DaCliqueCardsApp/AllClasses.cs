@@ -39,7 +39,7 @@ namespace DaCliqueCardsApp
         private void SearchButton_Click(object sender, EventArgs e)
         {
             DateTime startingDate = BegginingDateTimePicker.Value;
-            DateTime endDate = EndDateTimePicker.Value;
+            DateTime endDate = EndDateTimePicker.Value.AddHours(23);
 
             Place place = (Place)PlaceComboBox.SelectedItem;
             classes = classes.Where(c => c.PlaceId == place.Id).ToList();
