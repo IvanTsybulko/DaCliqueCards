@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DaCliqueCardsApp;
 
 namespace DaCliqueCardsApp
 {
-    public static class CurrClass
+    public static class CurrentCoach
     {
-        public static Class CurrentClass;
+        public static Coach CurrCoach;
     }
 }

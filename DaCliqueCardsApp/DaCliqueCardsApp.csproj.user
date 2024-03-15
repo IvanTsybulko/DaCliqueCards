@@ -1,40 +1,40 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Compile Update="AllClasses.cs">
+    <Compile Update="Forms\AllClasses.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="AllStudents.cs">
+    <Compile Update="Forms\AllStudents.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="CardDetails.cs">
+    <Compile Update="Forms\CardDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="CheckCards.cs">
+    <Compile Update="Forms\CheckCards.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="ClassDetails.cs">
+    <Compile Update="Forms\ClassDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="CreateClass.cs">
+    <Compile Update="Forms\CreateClass.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="CreateCard.cs">
+    <Compile Update="Forms\CreateCard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="DeleteReschedule.cs">
+    <Compile Update="Forms\DeleteReschedule.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="LogIn.cs">
+    <Compile Update="Forms\LogIn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Menu.cs">
+    <Compile Update="Forms\Menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="NewStudent.cs">
+    <Compile Update="Forms\NewStudent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="StudentDetails.cs">
+    <Compile Update="Forms\StudentDetails.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
